@@ -1,0 +1,53 @@
+/* CSS Reset */
+:root{
+    --color-body-bg: #ffffff;
+    --color-card-bg: #f7f6f5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--color-body-bg);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.wrapper {
+    max-width: 1380px;
+    margin: 0 auto;
+    padding: 5rem 20px;
+    display: grid;
+    grid-template-columns: 216px 442px;
+
+    .wrapper_aside {
+        position: relative;
+        z-index: 2;
+        border-image: linear-gradient(90deg,var(--color-body-bg),var(--color-body-bg)) fill 0//0 0 0 100vw;
+        padding-right: 20px;
+    }
+}
+
+.slider {
+    overflow: unset;
+}
+
+.card {
+    background-color: var(--color-card-bg);
+    width: 442px;
+}
+
+.pagination_btn {
+    --swiper-pagination-bullet-size: auto;
+    --swiper-pagination-bullet-border-radius: 0;
+    --swiper-pagination-bullet-inactive-opacity: 1;
+    --swiper-pagination-bullet-inactive-color: transparent;
+}
