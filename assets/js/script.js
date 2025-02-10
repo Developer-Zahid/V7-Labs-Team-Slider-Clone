@@ -1,37 +1,30 @@
-new Swiper('[data-swiper="team-slider"]', {
-    // effect: "fade",
-    rewind: true,
-    // autoplay: {
-    //     delay: 8000,
-    //     disableOnInteraction: false,
-    // },
-    // keyboard: {
-    //     enabled: true,
-    //     onlyInViewport: true,
-    // },
-    pagination: {
-        clickable: true,
-        el: '[data-swiper="pagination"]',
-        renderBullet: function (index, className) {
-            // $(".carousel_pagination_btn").eq(index).addClass(className);
-            // return $(".carousel_pagination_btn")[index].outerHTML;
+$('[data-swiper="wrapper"]').each(function () {
+    const $currentSlider = $(this).find('[data-swiper="team-slider"]');
+    const $paginationText = $(this).find('[data-swiper="pagination-text"]');
+    const $paginationElement = $(this).find('[data-swiper="pagination"]');
+    const $paginationBulletTemplate = $paginationElement.find('[data-template="bullet"]');
 
-            const template = `<button class="pagination_btn ${className}">
-                    <span class="pagination_btn_dot"></span>
-                    <span class="pagination_btn_text">User Name ${index}</span>
-                </button>`
-
-            return template;
+    new Swiper($currentSlider.get(0), {
+        speed: 800,
+        rewind: true,
+        slideToClickedSlide: true,
+        spaceBetween: 5,
+        autoplay: {
+            delay: 8000,
+            disableOnInteraction: false,
         },
-    },
-    // on: {
-    //     realIndexChange: function (swiper) {
-    //     $(".carousel_background_fill").css(
-    //         "color",
-    //         $(swiper.pagination.bullets[swiper.realIndex]).data(
-    //         "shape-color"
-    //         )
-    //     );
-    //     },
-    // },
-});
+        keyboard: {
+            enabled: true,
+            onlyInViewport: true,
+        },
+        pagination: {
+            clickable: true,
+            el: $paginationElement.get(0),
+            renderBullet: (bulletIndex, className)=> {
+                $paginationBulletTemplate.addClass(className);
+                $paginationBulletTemplate.find('[data-template="bullet-text"]').text($paginationText.eq(bulletIndex).text());
+                return $paginationBulletTemplate.prop('outerHTML');
+            },
+        },
+    });
+})

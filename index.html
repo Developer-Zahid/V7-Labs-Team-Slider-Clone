@@ -4,14 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>V7 Labs Team Slider Clone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-    <div class="wrapper">
+    <div class="wrapper" data-swiper="wrapper">
         <aside class="wrapper_aside">
             <div class="pagination" data-swiper="pagination">
-                
+                <button class="pagination_btn" data-template="bullet">
+                    <span class="pagination_btn_dot"></span>
+                    <span class="pagination_btn_text" data-template="bullet-text">User Name</span>
+                </button>
             </div>
         </aside>
         <main class="wrapper_main">
@@ -20,22 +26,44 @@
                     <div class="swiper-slide">
                         <article class="card">
                             <figure class="card_head">
-                                <img src="https://framerusercontent.com/images/uJDL4kgHra2WD0dkE3l1YCiN1o.webp" alt="" width="440" height="520" />
+                                <img class="card_image" src="https://framerusercontent.com/images/UarWmJQdd57gfwklF6KrGXOkZMY.webp" alt="user" width="440" height="520" loading="lazy" />
                             </figure>
                             <footer class="card_body">
-                                <h3 class="card_title">User Name 1</h3>
-                                <p class="card_text">User Designation</p>
+                                <h3 class="card_title" data-swiper="pagination-text">Alberto Rizzoli</h3>
+                                <p class="card_text">CEO, Co-founder</p>
                             </footer>
                         </article>
                     </div>
                     <div class="swiper-slide">
                         <article class="card">
                             <figure class="card_head">
-                                <img src="https://framerusercontent.com/images/uJDL4kgHra2WD0dkE3l1YCiN1o.webp" alt="" width="440" height="520" />
+                                <img class="card_image" src="https://framerusercontent.com/images/uJDL4kgHra2WD0dkE3l1YCiN1o.webp" alt="user" width="440" height="520" loading="lazy" />
                             </figure>
                             <footer class="card_body">
-                                <h3 class="card_title">User Name 2</h3>
-                                <p class="card_text">User Designation</p>
+                                <h3 class="card_title" data-swiper="pagination-text">Simon Edwardsson</h3>
+                                <p class="card_text">CTO, Co-founder</p>
+                            </footer>
+                        </article>
+                    </div>
+                    <div class="swiper-slide">
+                        <article class="card">
+                            <figure class="card_head">
+                                <img class="card_image" src="https://framerusercontent.com/images/U0HuD86JM1m4uvjSesbeiUsWjY.jpg" alt="user" width="440" height="520" loading="lazy" />
+                            </figure>
+                            <footer class="card_body">
+                                <h3 class="card_title" data-swiper="pagination-text">Bert Beauprez</h3>
+                                <p class="card_text">Head of Design</p>
+                            </footer>
+                        </article>
+                    </div>
+                    <div class="swiper-slide">
+                        <article class="card">
+                            <figure class="card_head">
+                                <img class="card_image" src="https://framerusercontent.com/images/yStHcczmiCEO2N2kRMq0OQQgHLs.jpg" alt="user" width="440" height="520" loading="lazy" />
+                            </figure>
+                            <footer class="card_body">
+                                <h3 class="card_title" data-swiper="pagination-text">Andrea Azzini</h3>
+                                <p class="card_text">Head of Product</p>
                             </footer>
                         </article>
                     </div>
@@ -43,9 +71,8 @@
             </div>
         </main>
     </div>
-
     
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./assets/js/script.js" defer></script>
 </body>
